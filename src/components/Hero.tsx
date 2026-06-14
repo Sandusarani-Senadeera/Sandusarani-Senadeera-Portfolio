@@ -108,7 +108,7 @@ export default function Hero() {
         </div>
 
         <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-          <ProfileImage size="lg" priority />
+          <ProfileImage size="xl" priority />
         </div>
       </div>
     </section>

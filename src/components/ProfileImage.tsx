@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 type ProfileImageProps = {
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   priority?: boolean;
   className?: string;
 };
@@ -13,6 +13,14 @@ const sizes = {
   sm: "h-44 w-44 md:h-52 md:w-52",
   md: "h-56 w-56 md:h-64 md:w-64",
   lg: "h-72 w-72 md:h-96 md:w-96",
+  xl: "h-[22rem] w-[22rem] sm:h-[26rem] sm:w-[26rem] md:h-[30rem] md:w-[30rem] lg:h-[34rem] lg:w-[34rem]",
+};
+
+const imageSizes = {
+  sm: "208px",
+  md: "256px",
+  lg: "384px",
+  xl: "544px",
 };
 
 export default function ProfileImage({
@@ -28,9 +36,10 @@ export default function ProfileImage({
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div
-        className="absolute inset-0 scale-110 rounded-full bg-brand-orange/25 blur-3xl"
+        className="absolute inset-0 scale-110 bg-brand-orange/15 blur-3xl"
         aria-hidden
       />
+
       <div className="relative h-full w-full">
         <Image
           src="/images/profile.png"
@@ -38,8 +47,8 @@ export default function ProfileImage({
           fill
           priority={priority}
           unoptimized
-          className="object-contain drop-shadow-[0_0_30px_rgba(255,95,31,0.5)]"
-          sizes={size === "lg" ? "384px" : size === "md" ? "256px" : "208px"}
+          className="object-contain drop-shadow-[0_0_30px_rgba(255,95,31,0.35)]"
+          sizes={imageSizes[size]}
         />
       </div>
     </motion.div>
