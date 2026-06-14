@@ -30,24 +30,19 @@ export default function ProfileImage({
 }: ProfileImageProps) {
   return (
     <motion.div
-      className={`relative ${sizes[size]} shrink-0 ${className}`}
+      className={`relative aspect-square ${sizes[size]} shrink-0 ${className}`}
       initial={{ opacity: 0, scale: 0.85 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div
-        className="absolute inset-0 scale-110 bg-brand-orange/15 blur-3xl"
-        aria-hidden
-      />
-
-      <div className="relative h-full w-full">
+      <div className="relative h-full w-full overflow-hidden rounded-full [transform:translateZ(0)]">
         <Image
           src="/images/profile.png"
           alt="Sandusarani Senadeera"
           fill
           priority={priority}
           unoptimized
-          className="object-contain drop-shadow-[0_0_30px_rgba(255,95,31,0.35)]"
+          className="object-contain"
           sizes={imageSizes[size]}
         />
       </div>

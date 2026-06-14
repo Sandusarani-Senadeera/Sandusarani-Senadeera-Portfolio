@@ -1,29 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Mail, Send } from "lucide-react";
+import { MapPin, Mail, ExternalLink, MessageCircle } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
 import SocialLinks from "./SocialLinks";
 import { profile } from "@/data/profile";
 
-export default function Contact() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)
-      .value;
-    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.open(
-      `https://www.linkedin.com/in/sandusarani-senadeera-ab3560322/`,
-      "_blank",
-    );
-    form.reset();
-  };
+function LinkedInIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
 
+export default function Contact() {
   return (
     <section id="contact" className="py-24">
       <div className="mx-auto max-w-5xl px-6">
@@ -43,14 +41,12 @@ export default function Contact() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">LinkedIn</p>
+                  <p className="text-sm text-gray-500">Email</p>
                   <a
-                    href={profile.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-brand-orange transition-colors"
+                    href={`mailto:${profile.email}`}
+                    className="text-white transition-colors hover:text-brand-orange"
                   >
-                    Message me on LinkedIn
+                    {profile.email}
                   </a>
                 </div>
               </div>
@@ -73,58 +69,53 @@ export default function Contact() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
-            >
-              <div>
-                <label htmlFor="name" className="mb-1 block text-sm text-gray-400">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-3 text-white outline-none transition-colors focus:border-brand-orange"
-                  placeholder="Your name"
-                />
+            <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+              <div className="mb-6 flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange">
+                  <LinkedInIcon size={28} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-white">
+                    Message on LinkedIn
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    Best way to reach me for projects & collaboration
+                  </p>
+                </div>
               </div>
-              <div>
-                <label htmlFor="email" className="mb-1 block text-sm text-gray-400">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-3 text-white outline-none transition-colors focus:border-brand-orange"
-                  placeholder="your@email.com"
-                />
+
+              <p className="mb-6 leading-relaxed text-gray-400">
+                I respond quickly on LinkedIn. Send me a direct message about
+                job opportunities, freelance work, or anything you&apos;d like to
+                discuss.
+              </p>
+
+              <div className="mt-auto space-y-3">
+                <motion.a
+                  href={profile.linkedinMessage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange py-3.5 font-semibold text-black shadow-glow-orange transition-shadow hover:shadow-glow-orange-lg"
+                >
+                  <MessageCircle size={18} />
+                  Message me on LinkedIn
+                </motion.a>
+
+                <motion.a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex w-full items-center justify-center gap-2 rounded-full border border-white/15 py-3 text-sm font-medium text-gray-300 transition-colors hover:border-brand-orange/50 hover:text-brand-orange"
+                >
+                  View my LinkedIn profile
+                  <ExternalLink size={16} />
+                </motion.a>
               </div>
-              <div>
-                <label htmlFor="message" className="mb-1 block text-sm text-gray-400">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  className="w-full resize-none rounded-lg border border-white/10 bg-black/50 px-4 py-3 text-white outline-none transition-colors focus:border-brand-orange"
-                  placeholder="Your message..."
-                />
-              </div>
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange py-3 font-semibold text-black shadow-glow-orange"
-              >
-                <Send size={18} />
-                Send via LinkedIn
-              </motion.button>
-            </form>
+            </div>
           </AnimatedSection>
         </div>
       </div>

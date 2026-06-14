@@ -23,6 +23,7 @@ export const profile = {
     "UI/UX Designer",
   ],
   location: "Colombo, Western Province, Sri Lanka",
+  email: "sandusaranisenadeera@gmail.com",
   education: {
     school: "St. Joseph's Girls' School, Nugegoda",
     degree: "BSc (Hons) in Information Technology — Software Engineering",
@@ -34,9 +35,11 @@ export const profile = {
     "I focus on turning real-world problems into clean, scalable software. My work spans web development with React and Next.js, backend APIs with Spring Boot, Android apps with Kotlin, and QA automation with Python and Selenium. I believe success in tech comes from balancing strong technical skills with communication, teamwork, and a growth mindset.",
   github: "https://github.com/Sandusarani-Senadeera",
   linkedin: "https://www.linkedin.com/in/sandusarani-senadeera-ab3560322",
+  linkedinMessage:
+    "https://www.linkedin.com/in/sandusarani-senadeera-ab3560322/",
   instagram:
     "https://www.instagram.com/sandu23s?igsh=MXZ1eWQ4aTNkNTlvMQ==",
-  facebook: "https://www.facebook.com/share/1BHjGecADK/?mibextid=wwXIfr",
+  facebook: "https://www.facebook.com/share/195f81Kh4R/",
 };
 
 export const socialLinks = [

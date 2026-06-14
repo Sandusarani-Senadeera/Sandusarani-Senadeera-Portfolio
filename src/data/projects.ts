@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "Modern banking platform built with TypeScript — a full-featured fintech web application.",
     url: "https://github.com/Sandusarani-Senadeera/NexaTrust-Bank",
     language: "TypeScript",
-    category: "fullstack",
+    category: "qa",
     status: "in-progress",
     stars: 1,
   },
