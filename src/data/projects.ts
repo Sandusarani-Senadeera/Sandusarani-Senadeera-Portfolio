@@ -10,6 +10,7 @@ export type Project = {
   name: string;
   description: string;
   url: string;
+  image: string;
   language?: string;
   category: ProjectCategory;
   status: ProjectStatus;
@@ -49,6 +50,7 @@ export const projects: Project[] = [
     description:
       "Personal portfolio website built with Next.js, Tailwind CSS, and Framer Motion.",
     url: "https://github.com/Sandusarani-Senadeera/Sandusarani-Senadeera-Portfolio",
+    image: "/images/projects/sandusarani-portfolio.svg",
     language: "TypeScript",
     category: "frontend",
     status: "ongoing",
@@ -57,8 +59,9 @@ export const projects: Project[] = [
   {
     name: "NexaTrust Bank",
     description:
-      "Modern banking platform built with TypeScript — a full-featured fintech web application.",
+      "QA project for NexaTrust Bank — test automation and quality assurance on a TypeScript fintech banking platform.",
     url: "https://github.com/Sandusarani-Senadeera/NexaTrust-Bank",
+    image: "/images/projects/nexatrust-bank.svg",
     language: "TypeScript",
     category: "qa",
     status: "in-progress",
@@ -67,8 +70,9 @@ export const projects: Project[] = [
   {
     name: "pixelssuite-QA-Automation",
     description:
-      "QA automation suite built with Python for automated web application testing.",
+      "QA automation suite built with Python and Selenium for automated web application testing.",
     url: "https://github.com/Sandusarani-Senadeera/pixelssuite-QA-Automation",
+    image: "/images/projects/pixelssuite-qa-automation.svg",
     language: "Python",
     category: "qa",
     status: "completed",
@@ -79,6 +83,7 @@ export const projects: Project[] = [
     description:
       "Maintenance incident ticketing system (Spring Boot) for a Smart University System.",
     url: "https://github.com/Sandusarani-Senadeera/maintenance-incident-ticketing-Springboot-",
+    image: "/images/projects/maintenance-incident-ticketing.svg",
     language: "Java",
     category: "fullstack",
     status: "completed",
@@ -89,6 +94,7 @@ export const projects: Project[] = [
     description:
       "Ticket purchasing management system for event handling, bookings, and administration.",
     url: "https://github.com/Sandusarani-Senadeera/Ticket-Purchasing-Management-System",
+    image: "/images/projects/ticket-purchasing-management.svg",
     language: "Java",
     category: "fullstack",
     status: "completed",
@@ -99,6 +105,7 @@ export const projects: Project[] = [
     description:
       "Virtual network infrastructure deployment covering cloud networking and DevOps configuration.",
     url: "https://github.com/Sandusarani-Senadeera/virtual-network-infrastructure-deployment",
+    image: "/images/projects/virtual-network-infrastructure.svg",
     category: "fullstack",
     status: "completed",
     stars: 1,
@@ -108,6 +115,7 @@ export const projects: Project[] = [
     description:
       "Spring Boot REST API with @GetMapping, @PathVariable, and @RequestParam endpoints.",
     url: "https://github.com/Sandusarani-Senadeera/spring-boot-Greeting-API",
+    image: "/images/projects/spring-boot-greeting-api.svg",
     language: "Java",
     category: "fullstack",
     status: "completed",
@@ -118,6 +126,7 @@ export const projects: Project[] = [
     description:
       "Hospital management system with patient portal, appointments, consultations, lab reports, and pharmacy modules.",
     url: "https://github.com/Sandusarani-Senadeera/Medi-care",
+    image: "/images/projects/medicare.svg",
     language: "HTML",
     category: "frontend",
     status: "in-progress",
@@ -128,6 +137,7 @@ export const projects: Project[] = [
     description:
       "Multimodal AI chatbot web app integrating Gemini AI for intelligent user experiences.",
     url: "https://github.com/Sandusarani-Senadeera/AI---ChatBot",
+    image: "/images/projects/ai-chatbot.svg",
     language: "JavaScript",
     category: "frontend",
     status: "completed",
@@ -138,6 +148,7 @@ export const projects: Project[] = [
     description:
       "Responsive QR code generator built with HTML, CSS, and JavaScript — enter text or URL and download instantly.",
     url: "https://github.com/Sandusarani-Senadeera/QR-code-Generator",
+    image: "/images/projects/qr-code-generator.svg",
     language: "CSS",
     category: "frontend",
     status: "completed",
@@ -148,6 +159,7 @@ export const projects: Project[] = [
     description:
       "Industry project management assignment demonstrating software development lifecycle practices.",
     url: "https://github.com/Sandusarani-Senadeera/IT23546752-ITPM-Assignment-1",
+    image: "/images/projects/itpm-assignment.svg",
     language: "JavaScript",
     category: "frontend",
     status: "completed",
@@ -158,6 +170,7 @@ export const projects: Project[] = [
     description:
       "Android workout app UI built with XML layouts following mobile UX best practices.",
     url: "https://github.com/Sandusarani-Senadeera/PowerUp-App",
+    image: "/images/projects/powerup-app.svg",
     language: "Kotlin",
     category: "mobile",
     status: "completed",
@@ -168,6 +181,7 @@ export const projects: Project[] = [
     description:
       "Android habit tracker built with Kotlin and SharedPreferences for local data persistence.",
     url: "https://github.com/Sandusarani-Senadeera/Daily-Habit-Tracker",
+    image: "/images/projects/daily-habit-tracker.svg",
     language: "Kotlin",
     category: "mobile",
     status: "completed",

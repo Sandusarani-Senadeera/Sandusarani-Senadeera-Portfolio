@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0a0a0a"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a1208"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect x="150" y="100" width="500" height="250" rx="12" fill="#111" stroke="#6db33f" stroke-opacity="0.45" stroke-width="2"/>
+  <text x="180" y="140" fill="#6db33f" font-family="monospace" font-size="16" font-weight="700">GET</text>
+  <text x="240" y="140" fill="#ffffff" font-family="monospace" font-size="16">/api/greeting/{name}</text>
+  <rect x="180" y="165" width="440" height="160" rx="8" fill="#000" stroke="#333" stroke-width="1"/>
+  <text x="200" y="200" fill="#6db33f" font-family="monospace" font-size="14">{</text>
+  <text x="220" y="230" fill="#93c5fd" font-family="monospace" font-size="14">"message":</text>
+  <text x="340" y="230" fill="#fbbf24" font-family="monospace" font-size="14">"Hello, Sandu!"</text>
+  <text x="200" y="270" fill="#6db33f" font-family="monospace" font-size="14">}</text>
+  <circle cx="620" cy="130" r="18" fill="#6db33f" fill-opacity="0.2" stroke="#6db33f" stroke-width="2"/>
+  <text x="400" y="395" text-anchor="middle" fill="#6db33f" font-family="Arial,sans-serif" font-size="20" font-weight="700">Spring Boot API</text>
+</svg>

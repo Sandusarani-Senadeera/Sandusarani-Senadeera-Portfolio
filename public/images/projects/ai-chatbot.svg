@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0a0a0a"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#100818"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect x="160" y="110" width="480" height="230" rx="18" fill="#15101a" stroke="#8b5cf6" stroke-opacity="0.4" stroke-width="2"/>
+  <rect x="190" y="200" width="200" height="70" rx="16" fill="#8b5cf6" fill-opacity="0.15"/>
+  <rect x="210" y="220" width="140" height="10" rx="5" fill="#ffffff" fill-opacity="0.4"/>
+  <rect x="210" y="242" width="90" height="8" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+  <rect x="410" y="160" width="200" height="70" rx="16" fill="#ff5f1f" fill-opacity="0.15"/>
+  <rect x="430" y="180" width="120" height="10" rx="5" fill="#ffffff" fill-opacity="0.35"/>
+  <rect x="430" y="202" width="80" height="8" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+  <circle cx="400" cy="130" r="40" fill="#8b5cf6" fill-opacity="0.2" stroke="#8b5cf6" stroke-width="2"/>
+  <circle cx="388" cy="122" r="5" fill="#8b5cf6"/>
+  <circle cx="412" cy="122" r="5" fill="#8b5cf6"/>
+  <path d="M385 142 Q400 155 415 142" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+  <text x="400" y="395" text-anchor="middle" fill="#a78bfa" font-family="Arial,sans-serif" font-size="22" font-weight="700">AI ChatBot</text>
+</svg>
