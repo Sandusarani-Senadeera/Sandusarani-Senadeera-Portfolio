@@ -75,7 +75,7 @@ export const projects: Project[] = [
     image: "/images/projects/pixelssuite-qa-automation.svg",
     language: "Python",
     category: "qa",
-    status: "completed",
+    status: "in-progress",
     stars: 1,
   },
   {

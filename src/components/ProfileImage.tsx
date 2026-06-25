@@ -42,7 +42,7 @@ export default function ProfileImage({
           fill
           priority={priority}
           unoptimized
-          className="object-contain"
+          className="object-cover"
           sizes={imageSizes[size]}
         />
       </div>

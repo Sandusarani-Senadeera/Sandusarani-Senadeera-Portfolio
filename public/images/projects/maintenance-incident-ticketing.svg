@@ -7,14 +7,14 @@
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect x="160" y="100" width="480" height="250" rx="12" fill="#151515" stroke="#ff5f1f" stroke-opacity="0.3" stroke-width="2"/>
-  <rect x="190" y="130" width="420" height="55" rx="8" fill="#ff5f1f" fill-opacity="0.1" stroke="#ff5f1f" stroke-opacity="0.25"/>
-  <rect x="210" y="148" width="140" height="10" rx="5" fill="#ff5f1f" fill-opacity="0.6"/>
+  <rect x="160" y="100" width="480" height="250" rx="12" fill="#151515" stroke="#de6800" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="190" y="130" width="420" height="55" rx="8" fill="#de6800" fill-opacity="0.1" stroke="#de6800" stroke-opacity="0.25"/>
+  <rect x="210" y="148" width="140" height="10" rx="5" fill="#de6800" fill-opacity="0.6"/>
   <rect x="210" y="168" width="220" height="8" rx="4" fill="#ffffff" fill-opacity="0.2"/>
   <rect x="190" y="200" width="420" height="55" rx="8" fill="#ffffff" fill-opacity="0.04"/>
   <rect x="210" y="218" width="120" height="10" rx="5" fill="#fbbf24" fill-opacity="0.5"/>
   <rect x="190" y="270" width="420" height="55" rx="8" fill="#ffffff" fill-opacity="0.04"/>
   <rect x="210" y="288" width="100" height="10" rx="5" fill="#22c55e" fill-opacity="0.5"/>
-  <path d="M620 155 L650 185 L710 125" stroke="#ff5f1f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="400" y="395" text-anchor="middle" fill="#ff5f1f" font-family="Arial,sans-serif" font-size="18" font-weight="700">Incident Ticketing</text>
+  <path d="M620 155 L650 185 L710 125" stroke="#de6800" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="395" text-anchor="middle" fill="#de6800" font-family="Arial,sans-serif" font-size="18" font-weight="700">Incident Ticketing</text>
 </svg>

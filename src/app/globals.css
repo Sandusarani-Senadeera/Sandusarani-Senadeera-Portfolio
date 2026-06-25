@@ -3,9 +3,12 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --brand-orange: #ff5f1f;
-  --brand-orange-glow: rgba(255, 95, 31, 0.8);
-  --brand-orange-soft: rgba(255, 95, 31, 0.15);
+  /* Sampled from public/images/profile.png background */
+  --brand-orange: #de6800;
+  --brand-orange-light: #f08820;
+  --brand-orange-dark: #af500c;
+  --brand-orange-glow: rgba(222, 104, 0, 0.55);
+  --brand-orange-soft: rgba(222, 104, 0, 0.15);
 }
 
 @theme inline {
@@ -15,7 +18,7 @@
   --font-sans: var(--font-poppins);
   --shadow-glow-orange: 0 0 30px var(--brand-orange-glow);
   --shadow-glow-orange-lg: 0 0 50px var(--brand-orange-glow);
-  --shadow-glow-orange-sm: 0 0 15px rgba(255, 95, 31, 0.5);
+  --shadow-glow-orange-sm: 0 0 15px rgba(222, 104, 0, 0.45);
 }
 
 html {

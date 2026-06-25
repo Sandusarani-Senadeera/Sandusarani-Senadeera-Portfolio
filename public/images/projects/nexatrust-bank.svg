@@ -16,8 +16,8 @@
   <rect x="210" y="210" width="120" height="10" rx="5" fill="#ffffff" fill-opacity="0.3"/>
   <rect x="210" y="235" width="180" height="10" rx="5" fill="#ffffff" fill-opacity="0.15"/>
   <rect x="210" y="260" width="90" height="10" rx="5" fill="#ffffff" fill-opacity="0.15"/>
-  <circle cx="540" cy="280" r="30" fill="#ff5f1f" fill-opacity="0.9"/>
-  <circle cx="570" cy="280" r="30" fill="#ff5f1f" fill-opacity="0.55"/>
+  <circle cx="540" cy="280" r="30" fill="#de6800" fill-opacity="0.9"/>
+  <circle cx="570" cy="280" r="30" fill="#de6800" fill-opacity="0.55"/>
   <path d="M400 70 L430 110 L370 110 Z" fill="#3b82f6" fill-opacity="0.6"/>
   <rect x="385" y="110" width="30" height="40" fill="#3b82f6" fill-opacity="0.4"/>
   <rect x="560" y="95" width="110" height="34" rx="17" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-opacity="0.5"/>

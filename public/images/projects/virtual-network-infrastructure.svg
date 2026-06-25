@@ -11,8 +11,8 @@
   <circle cx="280" cy="280" r="28" fill="#111" stroke="#0ea5e9" stroke-width="2"/>
   <circle cx="400" cy="310" r="28" fill="#111" stroke="#0ea5e9" stroke-width="2"/>
   <circle cx="520" cy="280" r="28" fill="#111" stroke="#0ea5e9" stroke-width="2"/>
-  <circle cx="340" cy="160" r="22" fill="#111" stroke="#ff5f1f" stroke-width="2"/>
-  <circle cx="460" cy="160" r="22" fill="#111" stroke="#ff5f1f" stroke-width="2"/>
+  <circle cx="340" cy="160" r="22" fill="#111" stroke="#de6800" stroke-width="2"/>
+  <circle cx="460" cy="160" r="22" fill="#111" stroke="#de6800" stroke-width="2"/>
   <line x1="340" y1="182" x2="300" y2="255" stroke="#0ea5e9" stroke-opacity="0.4" stroke-width="2"/>
   <line x1="460" y1="182" x2="500" y2="255" stroke="#0ea5e9" stroke-opacity="0.4" stroke-width="2"/>
   <line x1="308" y1="280" x2="372" y2="300" stroke="#0ea5e9" stroke-opacity="0.4" stroke-width="2"/>
