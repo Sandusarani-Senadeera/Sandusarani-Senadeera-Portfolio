@@ -15,7 +15,7 @@ export default function EducationSection() {
           <SectionHeading
             title="My"
             highlight="Education"
-            subtitle="Academic background  — building strong foundations in IT and software engineering."
+            subtitle="Academic background — building strong foundations in Information Technology."
           />
         </AnimatedSection>
 

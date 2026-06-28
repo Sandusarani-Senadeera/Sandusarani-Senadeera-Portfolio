@@ -13,7 +13,7 @@ export const profile = {
   ],
   cvPath: "/cv/Sandusarani-Senadeera-CV.pdf",
   tagline:
-    "BSc (Hons) in Information Technology (Software Engineering) Undergraduate",
+    "BSc (Hons) in Information Technology Undergraduate",
   roles: [
     "QA Tester",
     "Mobile App Developer",
@@ -26,11 +26,11 @@ export const profile = {
   email: "sandusaranisenadeera@gmail.com",
   education: {
     school: "St. Joseph's Girls' School, Nugegoda",
-    degree: "BSc (Hons) in Information Technology — Software Engineering",
+    degree: "BSc (Hons) in Information Technology",
     institution: "SLIIT — Faculty of Computing",
     period: "2023 – 2027",
   },
-  bio: "Passionate IT undergraduate specializing in software engineering with hands-on experience across frontend, full-stack, mobile, and QA automation. I build user-centered digital products — from hospital management systems and banking platforms to Android apps and automated test suites — while continuously learning industry-relevant skills through projects, hackathons, and open-source contributions.",
+  bio: "Passionate Information Technology undergraduate with experience in full-stack development, mobile application development, and QA automation. I enjoy building modern, user-friendly applications, learning new technologies, and creating innovative solutions that solve real-world problems.",
   aboutExtended:
     "I focus on turning real-world problems into clean, scalable software. My work spans web development with React and Next.js, backend APIs with Spring Boot, Android apps with Kotlin, and QA automation with Python and Selenium. I believe success in tech comes from balancing strong technical skills with communication, teamwork, and a growth mindset.",
   github: "https://github.com/Sandusarani-Senadeera",

@@ -15,6 +15,6 @@
   <rect x="330" y="150" width="300" height="30" rx="6" fill="#ffffff" fill-opacity="0.06"/>
   <rect x="330" y="195" width="300" height="30" rx="6" fill="#ffffff" fill-opacity="0.06"/>
   <rect x="330" y="240" width="300" height="30" rx="6" fill="#ffffff" fill-opacity="0.06"/>
-  <rect x="330" y="285" width="180" height="15" rx="4" fill="#de6800" fill-opacity="0.4"/>
+  <rect x="330" y="285" width="180" height="15" rx="4" fill="#de6900" fill-opacity="0.4"/>
   <text x="400" y="380" text-anchor="middle" fill="#facc15" font-family="Arial,sans-serif" font-size="20" font-weight="700">ITPM Assignment</text>
 </svg>

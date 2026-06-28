@@ -12,7 +12,7 @@
   <rect x="340" y="130" width="120" height="14" rx="7" fill="#a855f7" fill-opacity="0.7"/>
   <rect x="310" y="160" width="180" height="8" rx="4" fill="#ffffff" fill-opacity="0.25"/>
   <rect x="330" y="180" width="140" height="8" rx="4" fill="#ffffff" fill-opacity="0.15"/>
-  <rect x="370" y="240" width="60" height="40" rx="6" fill="#de6800" fill-opacity="0.8"/>
+  <rect x="370" y="240" width="60" height="40" rx="6" fill="#de6900" fill-opacity="0.8"/>
   <path d="M200 200 H170 V170 H130 V200 H100 V230 H130 V260 H170 V230 H200" fill="#a855f7" fill-opacity="0.35"/>
   <path d="M600 200 H630 V170 H670 V200 H700 V230 H670 V260 H630 V230 H600" fill="#a855f7" fill-opacity="0.35"/>
   <text x="400" y="360" text-anchor="middle" fill="#c084fc" font-family="Arial,sans-serif" font-size="20" font-weight="700">Ticket Management</text>

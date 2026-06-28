@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink, Star } from "lucide-react";
 import type { Project, ProjectStatus } from "@/data/projects";
 import { statusLabels } from "@/data/projects";
@@ -40,9 +40,50 @@ function ProjectImageFallback({ name }: { name: string }) {
   );
 }
 
+function ProjectCardImage({
+  src,
+  alt,
+  priority,
+  onError,
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+  onError?: () => void;
+}) {
+  const isSvg = src.toLowerCase().endsWith(".svg");
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      priority={priority}
+      unoptimized={isSvg}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      className={`${isSvg ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`}
+      onError={onError}
+    />
+  );
+}
+
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const gallery =
+    project.images && project.images.length > 0 ? project.images : [project.image];
   const [imageError, setImageError] = useState(false);
-  const showImage = project.image && !imageError;
+  const [activeImage, setActiveImage] = useState(0);
+  const showImage = gallery[0] && !imageError;
+  const hasGallery = gallery.length > 1;
+
+  useEffect(() => {
+    if (!hasGallery) return;
+
+    const interval = setInterval(() => {
+      setActiveImage((current) => (current + 1) % gallery.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [gallery.length, hasGallery]);
 
   return (
     <motion.a
@@ -58,14 +99,46 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <div className="relative aspect-video overflow-hidden border-b border-white/10 bg-black/20">
         {showImage ? (
-          <Image
-            src={project.image}
-            alt={`${project.name} preview`}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            onError={() => setImageError(true)}
-          />
+          <>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={gallery[activeImage]}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.45 }}
+                className="absolute inset-0"
+              >
+                <ProjectCardImage
+                  src={gallery[activeImage]}
+                  alt={`${project.name} preview ${activeImage + 1}`}
+                  priority={index < 3 && activeImage === 0}
+                  onError={() => setImageError(true)}
+                />
+              </motion.div>
+            </AnimatePresence>
+            {hasGallery && (
+              <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
+                {gallery.map((image, imageIndex) => (
+                  <button
+                    key={image}
+                    type="button"
+                    aria-label={`Show image ${imageIndex + 1}`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      event.stopPropagation();
+                      setActiveImage(imageIndex);
+                    }}
+                    className={`h-1.5 rounded-full transition-all ${
+                      imageIndex === activeImage
+                        ? "w-5 bg-brand-orange"
+                        : "w-1.5 bg-white/35 hover:bg-white/60"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+          </>
         ) : (
           <ProjectImageFallback name={project.name} />
         )}

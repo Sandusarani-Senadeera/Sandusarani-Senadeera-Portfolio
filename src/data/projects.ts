@@ -11,6 +11,7 @@ export type Project = {
   description: string;
   url: string;
   image: string;
+  images?: string[];
   language?: string;
   category: ProjectCategory;
   status: ProjectStatus;
@@ -54,6 +55,21 @@ export const projects: Project[] = [
     language: "TypeScript",
     category: "frontend",
     status: "ongoing",
+    stars: 0,
+  },
+  {
+    name: "Postman API Automation",
+    description:
+      "Mini API automation suite using Postman collections and Newman CLI — automated REST API tests with HTML report generation.",
+    url: "https://github.com/Sandusarani-Senadeera/Postman-automation-testing",
+    image: "/images/projects/postman-automation-testing.svg",
+    images: [
+      "/images/projects/postman-automation-testing.svg",
+      "/images/projects/postman-newman-report.svg",
+    ],
+    language: "JavaScript",
+    category: "qa",
+    status: "in-progress",
     stars: 0,
   },
   {

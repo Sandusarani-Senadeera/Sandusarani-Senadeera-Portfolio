@@ -16,10 +16,10 @@
   <rect x="300" y="230" width="50" height="50" rx="4" fill="#111"/>
   <rect x="360" y="230" width="50" height="50" rx="4" fill="#111"/>
   <rect x="420" y="230" width="50" height="50" rx="4" fill="#111"/>
-  <rect x="360" y="170" width="50" height="50" rx="4" fill="#de6800"/>
+  <rect x="360" y="170" width="50" height="50" rx="4" fill="#de6900"/>
   <rect x="300" y="290" width="50" height="50" rx="4" fill="#111"/>
   <rect x="420" y="290" width="50" height="50" rx="4" fill="#111"/>
-  <rect x="220" y="150" width="40" height="120" rx="8" fill="#de6800" fill-opacity="0.15" stroke="#de6800" stroke-opacity="0.4"/>
-  <rect x="540" y="150" width="40" height="120" rx="8" fill="#de6800" fill-opacity="0.15" stroke="#de6800" stroke-opacity="0.4"/>
-  <text x="400" y="380" text-anchor="middle" fill="#de6800" font-family="Arial,sans-serif" font-size="22" font-weight="700">QR Generator</text>
+  <rect x="220" y="150" width="40" height="120" rx="8" fill="#de6900" fill-opacity="0.15" stroke="#de6900" stroke-opacity="0.4"/>
+  <rect x="540" y="150" width="40" height="120" rx="8" fill="#de6900" fill-opacity="0.15" stroke="#de6900" stroke-opacity="0.4"/>
+  <text x="400" y="380" text-anchor="middle" fill="#de6900" font-family="Arial,sans-serif" font-size="22" font-weight="700">QR Generator</text>
 </svg>
