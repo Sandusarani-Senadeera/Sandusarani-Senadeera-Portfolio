@@ -9,25 +9,32 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sandusaranisenadeera.online"),
   title: "Sandusarani Senadeera",
   description:
-    "Portfolio of Sandusarani Senadeera — Information Technology undergraduate, Full-Stack Developer, Mobile App Developer, UI/UX Designer, and QA Automation enthusiast based in Colombo, Sri Lanka.",
-  keywords: [
-    "Sandusarani Senadeera",
-    "Full-Stack Developer",
-    "Frontend Developer",
-    "Mobile Developer",
-    "QA Automation",
-    "Portfolio",
-    "SLIIT",
-    "Sri Lanka",
-  ],
-  authors: [{ name: "Sandusarani Senadeera" }],
+    "Portfolio of Sandusarani Senadeera - Information Technology undergraduate, Full-Stack Developer, Mobile App Developer, UI/UX Designer, and QA Automation enthusiast based in Colombo, Sri Lanka.",
   openGraph: {
     title: "Sandusarani Senadeera",
     description:
-      "Full-Stack Web Developer & IT Undergraduate — explore my projects, skills, and services.",
+      "Full-Stack Web Developer & IT Undergraduate - explore my projects, skills, and services.",
+    url: "https://www.sandusaranisenadeera.online",
+    siteName: "Sandusarani Senadeera",
+    images: [
+      {
+        url: "/images/profile.png",
+        width: 1024,
+        height: 1024,
+        alt: "Sandusarani Senadeera portfolio preview",
+      },
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sandusarani Senadeera",
+    description:
+      "Full-Stack Web Developer & IT Undergraduate - explore my projects, skills, and services.",
+    images: ["/images/profile.png"],
   },
 };
 
