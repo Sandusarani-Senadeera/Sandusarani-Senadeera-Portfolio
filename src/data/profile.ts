@@ -11,7 +11,7 @@ export const profile = {
     "Frontend Developer",
     "UI/UX Designer",
   ],
-  cvPath: "/cv/Sandusarani-Senadeera-CV.pdf",
+  cvPath: "/cv/Sandusarani_Senadeera_Resume.pdf",
   tagline:
     "BSc (Hons) in Information Technology Undergraduate",
   roles: [
