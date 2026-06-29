@@ -2,7 +2,7 @@ export const profile = {
   firstName: "Sandusarani",
   lastName: "Senadeera",
   fullName: "Sandusarani Senadeera",
-  title: "Full-Stack Web Developer",
+  title: "BSc (Hons) in Information Technology Undergraduate",
   rotatingRoles: [
     "QA Tester",
     "Mobile App Developer",

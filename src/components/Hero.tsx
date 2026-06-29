@@ -88,7 +88,7 @@ export default function Hero() {
             </motion.a>
             <motion.a
               href={profile.cvPath}
-              download
+              download ="Sandusarani_Senadeera_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="flex items-center gap-2 rounded-full border-2 border-brand-orange px-8 py-3 text-sm font-semibold text-brand-orange transition-colors hover:bg-brand-orange hover:text-black"
