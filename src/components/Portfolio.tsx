@@ -15,6 +15,12 @@ import {
 } from "@/data/projects";
 import { profile } from "@/data/profile";
 
+type FilterOption<T extends string> = {
+  id: T;
+  label: string;
+  shortLabel?: string;
+};
+
 function FilterSelect<T extends string>({
   label,
   value,
@@ -24,7 +30,7 @@ function FilterSelect<T extends string>({
   label: string;
   value: T;
   onChange: (value: T) => void;
-  options: { id: T; label: string }[];
+  options: FilterOption<T>[];
 }) {
   return (
     <label className="block w-full">
@@ -57,42 +63,73 @@ function FilterSelect<T extends string>({
   );
 }
 
-function FilterPills<T extends string>({
+function FilterGrid<T extends string>({
+  label,
   options,
   value,
   onChange,
-  activeStyle,
+  columnsClass,
 }: {
-  options: { id: T; label: string }[];
+  label: string;
+  options: FilterOption<T>[];
   value: T;
   onChange: (value: T) => void;
-  activeStyle: "solid" | "outline";
+  columnsClass: string;
 }) {
   return (
-    <div className="flex flex-wrap justify-center gap-3">
-      {options.map((option) => {
-        const isActive = value === option.id;
+    <div>
+      <p className="mb-2.5 text-xs font-semibold tracking-wider text-gray-500 uppercase">
+        {label}
+      </p>
+      <div className={`grid gap-2 ${columnsClass}`}>
+        {options.map((option) => {
+          const isActive = value === option.id;
 
-        return (
-          <button
-            key={option.id}
-            type="button"
-            onClick={() => onChange(option.id)}
-            className={`rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
-              isActive
-                ? activeStyle === "solid"
+          return (
+            <button
+              key={option.id}
+              type="button"
+              onClick={() => onChange(option.id)}
+              className={`w-full rounded-xl px-2 py-2.5 text-center text-xs font-medium transition-colors sm:py-3 sm:text-sm ${
+                isActive
                   ? "bg-brand-orange text-black shadow-glow-orange-sm"
-                  : "border border-brand-orange bg-brand-orange/10 text-brand-orange"
-                : "border border-white/10 text-gray-400 hover:border-brand-orange/40 hover:text-white"
-            }`}
-          >
-            {option.label}
-          </button>
-        );
-      })}
+                  : "border border-white/10 bg-white/[0.03] text-gray-400 hover:border-brand-orange/40 hover:text-white"
+              }`}
+            >
+              {option.shortLabel ?? option.label}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }
+
+const categoryTabs: FilterOption<ProjectCategory | "all">[] = [
+  { id: "all", label: "All Projects", shortLabel: "All" },
+  ...projectCategories.map((category) => ({
+    id: category.id,
+    label: category.label,
+    shortLabel:
+      category.id === "mobile"
+        ? "Mobile"
+        : category.id === "qa"
+          ? "QA"
+          : category.label,
+  })),
+];
+
+const statusTabs: FilterOption<ProjectStatus | "all">[] =
+  projectStatuses.map((status) => ({
+    id: status.id,
+    label: status.label,
+    shortLabel:
+      status.id === "all"
+        ? "All"
+        : status.id === "in-progress"
+          ? "In Progress"
+          : status.label,
+  }));
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory | "all">(
@@ -110,11 +147,6 @@ export default function Portfolio() {
     return matchesCategory && matchesStatus;
   });
 
-  const categoryTabs: { id: ProjectCategory | "all"; label: string }[] = [
-    { id: "all", label: "All Projects" },
-    ...projectCategories,
-  ];
-
   return (
     <section id="portfolio" className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -127,7 +159,7 @@ export default function Portfolio() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          {/* Mobile: compact dropdown filters */}
+          {/* Phone: dropdown filters */}
           <div className="mb-6 space-y-3 md:hidden">
             <FilterSelect
               label="Category"
@@ -139,33 +171,29 @@ export default function Portfolio() {
               label="Status"
               value={activeStatus}
               onChange={setActiveStatus}
-              options={projectStatuses}
+              options={statusTabs}
             />
           </div>
 
-          {/* Tablet & desktop: pill filters */}
-          <div className="mb-8 hidden space-y-6 md:block">
-            <div>
-              <p className="mb-3 text-center text-xs font-medium tracking-wide text-gray-500 uppercase">
-                Category
-              </p>
-              <FilterPills
+          {/* Tablet & desktop: aligned filter panel */}
+          <div className="mx-auto mb-8 hidden max-w-4xl rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5 md:block">
+            <div className="space-y-4">
+              <FilterGrid
+                label="Category"
                 options={categoryTabs}
                 value={activeCategory}
                 onChange={setActiveCategory}
-                activeStyle="solid"
+                columnsClass="grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
               />
-            </div>
-            <div>
-              <p className="mb-3 text-center text-xs font-medium tracking-wide text-gray-500 uppercase">
-                Status
-              </p>
-              <FilterPills
-                options={projectStatuses}
-                value={activeStatus}
-                onChange={setActiveStatus}
-                activeStyle="outline"
-              />
+              <div className="border-t border-white/10 pt-4">
+                <FilterGrid
+                  label="Status"
+                  options={statusTabs}
+                  value={activeStatus}
+                  onChange={setActiveStatus}
+                  columnsClass="grid-cols-2 lg:grid-cols-4"
+                />
+              </div>
             </div>
           </div>
         </AnimatedSection>
