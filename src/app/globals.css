@@ -50,3 +50,13 @@ body {
   background: var(--brand-orange);
   border-radius: 4px;
 }
+
+/* Prevent orange scrollbars on horizontal filter rows */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
