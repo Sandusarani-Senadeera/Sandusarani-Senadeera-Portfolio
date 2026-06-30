@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import ProjectCard from "./ProjectCard";
@@ -14,21 +15,81 @@ import {
 } from "@/data/projects";
 import { profile } from "@/data/profile";
 
-function FilterGroup({
+function FilterSelect<T extends string>({
   label,
-  children,
+  value,
+  onChange,
+  options,
 }: {
   label: string;
-  children: React.ReactNode;
+  value: T;
+  onChange: (value: T) => void;
+  options: { id: T; label: string }[];
 }) {
   return (
-    <div className="w-full">
-      <p className="mb-2 text-center text-xs font-medium tracking-wide text-gray-500 uppercase sm:mb-3">
+    <label className="block w-full">
+      <span className="mb-2 block text-xs font-medium tracking-wide text-gray-500 uppercase">
         {label}
-      </p>
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-        {children}
+      </span>
+      <div className="relative">
+        <select
+          value={value}
+          onChange={(event) => onChange(event.target.value as T)}
+          className="w-full appearance-none rounded-xl border border-white/10 bg-white/5 py-3 pr-10 pl-4 text-sm text-white outline-none transition-colors focus:border-brand-orange/50"
+        >
+          {options.map((option) => (
+            <option
+              key={option.id}
+              value={option.id}
+              className="bg-black text-white"
+            >
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <ChevronDown
+          size={18}
+          className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-gray-400"
+          aria-hidden
+        />
       </div>
+    </label>
+  );
+}
+
+function FilterPills<T extends string>({
+  options,
+  value,
+  onChange,
+  activeStyle,
+}: {
+  options: { id: T; label: string }[];
+  value: T;
+  onChange: (value: T) => void;
+  activeStyle: "solid" | "outline";
+}) {
+  return (
+    <div className="flex flex-wrap justify-center gap-3">
+      {options.map((option) => {
+        const isActive = value === option.id;
+
+        return (
+          <button
+            key={option.id}
+            type="button"
+            onClick={() => onChange(option.id)}
+            className={`rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
+              isActive
+                ? activeStyle === "solid"
+                  ? "bg-brand-orange text-black shadow-glow-orange-sm"
+                  : "border border-brand-orange bg-brand-orange/10 text-brand-orange"
+                : "border border-white/10 text-gray-400 hover:border-brand-orange/40 hover:text-white"
+            }`}
+          >
+            {option.label}
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -66,50 +127,56 @@ export default function Portfolio() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div className="mb-6 space-y-5 sm:mb-8 sm:space-y-6">
-            <FilterGroup label="Category">
-              {categoryTabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveCategory(tab.id)}
-                  className={`rounded-full px-3 py-2 text-xs font-medium transition-colors sm:px-5 sm:py-2.5 sm:text-sm ${
-                    activeCategory === tab.id
-                      ? "bg-brand-orange text-black shadow-glow-orange-sm"
-                      : "border border-white/10 text-gray-400 hover:border-brand-orange/40 hover:text-white"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </FilterGroup>
+          {/* Mobile: compact dropdown filters */}
+          <div className="mb-6 space-y-3 md:hidden">
+            <FilterSelect
+              label="Category"
+              value={activeCategory}
+              onChange={setActiveCategory}
+              options={categoryTabs}
+            />
+            <FilterSelect
+              label="Status"
+              value={activeStatus}
+              onChange={setActiveStatus}
+              options={projectStatuses}
+            />
+          </div>
 
-            <FilterGroup label="Status">
-              {projectStatuses.map((tab) => (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveStatus(tab.id)}
-                  className={`rounded-full px-3 py-2 text-xs font-medium transition-colors sm:px-5 sm:py-2.5 sm:text-sm ${
-                    activeStatus === tab.id
-                      ? "border border-brand-orange bg-brand-orange/10 text-brand-orange"
-                      : "border border-white/10 text-gray-400 hover:border-brand-orange/40 hover:text-white"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </FilterGroup>
+          {/* Tablet & desktop: pill filters */}
+          <div className="mb-8 hidden space-y-6 md:block">
+            <div>
+              <p className="mb-3 text-center text-xs font-medium tracking-wide text-gray-500 uppercase">
+                Category
+              </p>
+              <FilterPills
+                options={categoryTabs}
+                value={activeCategory}
+                onChange={setActiveCategory}
+                activeStyle="solid"
+              />
+            </div>
+            <div>
+              <p className="mb-3 text-center text-xs font-medium tracking-wide text-gray-500 uppercase">
+                Status
+              </p>
+              <FilterPills
+                options={projectStatuses}
+                value={activeStatus}
+                onChange={setActiveStatus}
+                activeStyle="outline"
+              />
+            </div>
           </div>
         </AnimatedSection>
 
         <AnimatePresence mode="wait">
           <motion.div
             key={`${activeCategory}-${activeStatus}`}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.25 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
             className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
           >
             {filtered.map((project, index) => (

@@ -4,7 +4,12 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
-import { skillTabs, skills, type SkillCategoryId } from "@/data/skills";
+import {
+  skillGroups,
+  skillTabs,
+  skills,
+  type SkillCategoryId,
+} from "@/data/skills";
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState<SkillCategoryId | "all">("all");
@@ -34,50 +39,80 @@ export default function Skills() {
           />
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1}>
-          <div className="mb-6 flex flex-wrap justify-center gap-2 sm:mb-8 sm:gap-3">
-            {skillTabs.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveTab(tab.id)}
-                className={`rounded-full px-3 py-2 text-xs font-medium transition-colors sm:px-5 sm:py-2.5 sm:text-sm ${
-                  activeTab === tab.id
-                    ? "bg-brand-orange text-black shadow-glow-orange-sm"
-                    : "border border-white/10 text-gray-400 hover:border-brand-orange/40 hover:text-white"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </AnimatedSection>
-
-        <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
-          <AnimatePresence mode="popLayout">
-            {filtered.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.2, delay: index * 0.03 }}
-                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm transition-colors hover:border-brand-orange/40 min-[480px]:flex-col min-[480px]:items-center min-[480px]:text-center min-[480px]:p-5"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange transition-colors group-hover:bg-brand-orange group-hover:text-black">
-                  <skill.icon className="h-5 w-5" />
+        {/* Mobile: grouped list — no filter pills */}
+        <div className="space-y-5 md:hidden">
+          {skillGroups.map((group) => (
+            <AnimatedSection key={group.id}>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+                <div className="flex items-center gap-3 border-b border-white/10 px-4 py-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-orange/10 text-brand-orange">
+                    <group.icon className="h-4 w-4" />
+                  </div>
+                  <h3 className="text-sm font-semibold text-white">
+                    {group.title}
+                  </h3>
                 </div>
-                <div className="min-w-0 flex-1 min-[480px]:flex-none">
-                  <p className="text-sm font-semibold leading-snug text-white sm:text-base">
+                <ul>
+                  {group.skills.map((skill) => (
+                    <li
+                      key={skill.name}
+                      className="flex items-center gap-3 border-b border-white/5 px-4 py-3.5 last:border-b-0"
+                    >
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-orange" />
+                      <span className="text-sm text-gray-300">{skill.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        {/* Tablet & desktop: filter tabs + card grid */}
+        <div className="hidden md:block">
+          <AnimatedSection delay={0.1}>
+            <div className="mb-8 flex flex-wrap justify-center gap-3">
+              {skillTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
+                    activeTab === tab.id
+                      ? "bg-brand-orange text-black shadow-glow-orange-sm"
+                      : "border border-white/10 text-gray-400 hover:border-brand-orange/40 hover:text-white"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
+            <AnimatePresence mode="popLayout">
+              {filtered.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.2, delay: index * 0.03 }}
+                  className="group flex flex-col items-center rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-center backdrop-blur-sm transition-colors hover:border-brand-orange/40"
+                >
+                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange transition-colors group-hover:bg-brand-orange group-hover:text-black">
+                    <skill.icon className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-semibold leading-snug text-white">
                     {skill.name}
                   </p>
-                  <p className="mt-1 text-[10px] font-medium tracking-wide text-brand-orange uppercase sm:text-xs">
+                  <p className="mt-1.5 text-xs font-medium tracking-wide text-brand-orange uppercase">
                     {skill.categoryLabel}
                   </p>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

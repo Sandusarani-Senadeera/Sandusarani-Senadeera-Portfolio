@@ -14,6 +14,13 @@ export type Skill = {
   icon: LucideIcon;
 };
 
+export const categoryIcons: Record<SkillCategoryId, LucideIcon> = {
+  frontend: Code2,
+  backend: Server,
+  mobile: Smartphone,
+  "tools-design": Palette,
+};
+
 export const skillTabs: {
   id: SkillCategoryId | "all";
   label: string;
@@ -69,3 +76,12 @@ export const skills: Skill[] = [
     icon: Palette,
   },
 ];
+
+export const skillGroups = skillTabs
+  .filter((tab) => tab.id !== "all")
+  .map((tab) => ({
+    id: tab.id as SkillCategoryId,
+    title: tab.label,
+    icon: categoryIcons[tab.id as SkillCategoryId],
+    skills: skills.filter((skill) => skill.category === tab.id),
+  }));
