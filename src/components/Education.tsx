@@ -9,8 +9,8 @@ import { profile } from "@/data/profile";
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="education" className="py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
             title="My"
@@ -37,7 +37,7 @@ export default function EducationSection() {
                   </div>
                 </div>
 
-                <div className="flex-1 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-colors hover:border-brand-orange/40">
+                <div className="flex-1 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-colors hover:border-brand-orange/40 sm:p-6">
                   <div className="mb-1 flex flex-wrap items-start justify-between gap-2">
                     <h3 className="text-lg font-semibold text-white">
                       {item.institution}

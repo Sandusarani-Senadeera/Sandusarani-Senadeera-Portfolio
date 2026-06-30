@@ -9,8 +9,8 @@ import { profile } from "@/data/profile";
 
 export default function About() {
   return (
-    <section id="about" className="py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="about" className="py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading title="About" highlight="Me" />
         </AnimatedSection>

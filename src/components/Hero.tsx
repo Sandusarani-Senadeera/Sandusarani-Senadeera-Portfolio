@@ -28,12 +28,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden pt-24"
+      className="relative flex min-h-[100dvh] items-center overflow-hidden pt-20 sm:pt-24"
     >
       <div className="pointer-events-none absolute -right-32 top-1/4 h-96 w-96 rounded-full bg-brand-orange/10 blur-3xl" />
       <div className="pointer-events-none absolute -left-32 bottom-1/4 h-72 w-72 rounded-full bg-brand-orange/5 blur-3xl" />
 
-      <div className="mx-auto grid max-w-7xl flex-1 items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-7xl flex-1 items-center gap-10 px-4 py-12 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="order-2 lg:order-1">
           <motion.p
             initial="hidden"

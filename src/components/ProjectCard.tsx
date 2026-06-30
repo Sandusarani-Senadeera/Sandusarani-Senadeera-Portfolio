@@ -144,7 +144,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-4 sm:p-6">
         <div className="mb-3 flex items-start justify-between gap-3">
           <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-brand-orange">
             {project.name}

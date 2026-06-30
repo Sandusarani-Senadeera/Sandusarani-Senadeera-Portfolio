@@ -23,8 +23,8 @@ function LinkedInIcon({ size = 18 }: { size?: number }) {
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
             title="Get In"
@@ -33,7 +33,7 @@ export default function Contact() {
           />
         </AnimatedSection>
 
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
           <AnimatedSection delay={0.1}>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
@@ -44,7 +44,7 @@ export default function Contact() {
                   <p className="text-sm text-gray-500">Email</p>
                   <a
                     href={`mailto:${profile.email}`}
-                    className="text-white transition-colors hover:text-brand-orange"
+                    className="break-all text-sm text-white transition-colors hover:text-brand-orange sm:text-base"
                   >
                     {profile.email}
                   </a>
@@ -69,7 +69,7 @@ export default function Contact() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+            <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:p-6 lg:p-8">
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange">
                   <LinkedInIcon size={28} />

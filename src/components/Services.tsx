@@ -7,8 +7,8 @@ import { services } from "@/data/services";
 
 export default function Services() {
   return (
-    <section id="services" className="py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="services" className="py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeading
             title="My"
