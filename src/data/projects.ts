@@ -47,6 +47,16 @@ export const projectCategories: {
 /** Projects synced from https://github.com/Sandusarani-Senadeera */
 export const projects: Project[] = [
   {
+    name: "E-Commerce Website Manual Testing",
+    description:
+      "Manual QA testing project for an e-commerce website — test cases covering product listing, cart, checkout, and user flows.",
+    url: "https://github.com/Sandusarani-Senadeera/E-Commerce-Website-Manual-Testing",
+    image: "/images/projects/e-commerce-manual-testing.svg",
+    category: "qa",
+    status: "in-progress",
+    stars: 0,
+  },
+  {
     name: "Sandusarani Senadeera Portfolio",
     description:
       "Personal portfolio website built with Next.js, Tailwind CSS, and Framer Motion.",
