@@ -53,7 +53,7 @@ export const projects: Project[] = [
     url: "https://github.com/Sandusarani-Senadeera/E-Commerce-Website-Manual-Testing",
     image: "/images/projects/e-commerce-manual-testing.svg",
     category: "qa",
-    status: "in-progress",
+    status: "completed",
     stars: 0,
   },
   {
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     ],
     language: "JavaScript",
     category: "qa",
-    status: "in-progress",
+    status: "completed",
     stars: 0,
   },
   {
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     image: "/images/projects/nexatrust-bank.svg",
     language: "TypeScript",
     category: "qa",
-    status: "in-progress",
+    status: "completed",
     stars: 1,
   },
   {
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     image: "/images/projects/pixelssuite-qa-automation.svg",
     language: "Python",
     category: "qa",
-    status: "in-progress",
+    status: "completed",
     stars: 1,
   },
   {
