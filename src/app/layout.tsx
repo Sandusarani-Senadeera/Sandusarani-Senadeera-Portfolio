@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -53,6 +54,7 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} h-full scroll-smooth`}>
       <body className="min-h-full bg-black text-white antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
