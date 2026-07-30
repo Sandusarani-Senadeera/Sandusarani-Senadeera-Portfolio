@@ -9,9 +9,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Sandusarani Senadeera | Full-Stack Web Developer",
+  title: "Sandusarani Senadeera",
   description:
-    "Portfolio of Sandusarani Senadeera — BSc IT (Software Engineering) undergraduate, Full-Stack Developer, Mobile App Developer, UI/UX Designer, and QA Automation enthusiast based in Colombo, Sri Lanka.",
+    "Portfolio of Sandusarani Senadeera — Information Technology undergraduate, Full-Stack Developer, Mobile App Developer, UI/UX Designer, and QA Automation enthusiast based in Colombo, Sri Lanka.",
   keywords: [
     "Sandusarani Senadeera",
     "Full-Stack Developer",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Sandusarani Senadeera" }],
   openGraph: {
-    title: "Sandusarani Senadeera | Portfolio",
+    title: "Sandusarani Senadeera",
     description:
       "Full-Stack Web Developer & IT Undergraduate — explore my projects, skills, and services.",
     type: "website",
